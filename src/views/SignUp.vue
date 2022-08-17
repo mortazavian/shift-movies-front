@@ -1,13 +1,23 @@
 <template>
   <div>
-    <form action="">
-      <input class="name" type="text" v-bind="name" />
-      <input class="user-name" type="text" v-bind="userName" />
-      <input class="email" type="text" v-bind="email" />
-      <input class="password" type="text" v-bind="password" />
+    <!-- <form> -->
+    <label>Name</label>
+    <input class="name form-control" type="text" v-model="currentUser.name" />
+    <label>User Id</label>
+    <input
+      class="user-name form-control"
+      type="text"
+      v-model="currentUser.userName"
+    />
+    <input class="email form-control" type="text" v-model="currentUser.email" />
+    <input
+      class="password form-control"
+      type="text"
+      v-model="currentUser.password"
+    />
 
-      <button @click="signUp">Sign Up</button>
-    </form>
+    <button @click="signUp">signUp</button>
+    <!-- </form> -->
   </div>
 </template>
 
@@ -26,12 +36,12 @@ export default {
   },
   methods: {
     async signUp() {
-      const { data, status } = await axios.post(
-        "http://localhost:8080/signup",
-        this.currentUser
-      );
-      console.log(data);
-      console.log(status);
+      console.log(this.currentUser.userName);
+
+      console.log(this.currentUser.password);
+
+      console.log(this.currentUser.email);
+      //   this.$router.push("/");
     },
   },
 };
@@ -39,4 +49,23 @@ export default {
 // name - user name - email - password
 </script>
 
-<style scoped></style>
+<style scoped>
+.form-control {
+  background-color: #4c9daf;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px 10px;
+  text-align: center;
+}
+.btn {
+  background-color: rgb(139, 125, 218);
+  border-radius: 20px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+</style>

@@ -8,6 +8,7 @@
         type="text"
         class="form-control"
         placeholder="Enter Your Username"
+        v-model="currentUser.userName"
       />
     </div>
 
@@ -17,6 +18,7 @@
         type="password"
         class="form-control"
         placeholder="Enter Your Password"
+        v-model="currentUser.password"
       />
     </div>
 
@@ -28,20 +30,22 @@
 
 <script>
 export default {
-//   name: "LogIn",
-//   data() {
-//     return {
-//       currentUser: {
-//         username: "",
-//         password: "",
-//       },
-//     };
-//   },
-//   methods: {
-//     async logIn() {
-//       this.$router.push("/");
-//     },
-//   },
+  name: "LogIn",
+  data() {
+    return {
+      currentUser: {
+        userName: "",
+        password: "",
+      },
+    };
+  },
+  methods: {
+    async logIn() {
+      console.log(this.currentUser.userName);
+      console.log(this.currentUser.password);
+      // this.$router.push("/");
+    },
+  },
 };
 </script>
 
