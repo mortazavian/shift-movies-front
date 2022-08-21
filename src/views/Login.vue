@@ -8,7 +8,7 @@
         type="text"
         class="form-control"
         placeholder="Enter Your Username"
-        v-model="currentUser.userName"
+        v-model="currentUser.username"
       />
     </div>
 
@@ -29,20 +29,63 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  name: "LogIn",
+  // name: "LogIn",
   data() {
     return {
       currentUser: {
-        userName: "",
+        username: "",
         password: "",
       },
     };
   },
   methods: {
-    async logIn() {
-      console.log(this.currentUser.userName);
-      console.log(this.currentUser.password);
+    logIn() {
+      axios({
+        method: "post",
+        url: "http://127.0.0.1:8000/login/",
+        data: {
+          username: this.currentUser.username,
+          password: this.currentUser.password,
+        },
+        // headers: {
+        //   "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        // },
+      }).then((response) => {
+        // if (response.status == 200) {
+        //   console.log("KIR");
+        // } else {
+        //   console.log("SAlam");
+        // }
+
+        // if (response.ok) {
+        //   console.log(response.data.token);
+        // }
+
+        // if (
+        //   response ===
+        //   { non_field_errors: ["Unable to log in with provided credentials."] }
+        // ) {
+        //   console.log("KIR");
+        // } else {
+        //   console.log(response.data.token);
+        // }
+        console.log("Salam");
+      });
+      // .catch((response) => console.log(response));
+      // axios
+      //   .post("http://localhost:8000/login/", {
+      //     userName: this.currentUser.userName,
+      //     password: this.currentUser.password,
+      //   })
+      //   .then((response) => {
+      //     console.log(response.data.token);
+      //   })
+      //   .catch((error) => console.log(error.response.request._response));
+
+      // console.log(this.currentUser.userName);
+      // console.log(this.currentUser.password);
       // this.$router.push("/");
     },
   },
