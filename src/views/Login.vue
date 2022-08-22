@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 export default {
   // name: "LogIn",
   data() {
@@ -58,6 +58,8 @@ export default {
         // } else {
         //   console.log("SAlam");
         // }
+        console.log('kir');
+        console.log(response);
 
         // if (response.ok) {
         //   console.log(response.data.token);
@@ -71,24 +73,24 @@ export default {
         // } else {
         //   console.log(response.data.token);
         // }
-        console.log("Salam");
-      });
-      // .catch((response) => console.log(response));
-      // axios
-      //   .post("http://localhost:8000/login/", {
-      //     userName: this.currentUser.userName,
-      //     password: this.currentUser.password,
-      //   })
-      //   .then((response) => {
-      //     console.log(response.data.token);
-      //   })
-      //   .catch((error) => console.log(error.response.request._response));
+        console.log("kirr");
+      })
+    .catch((error) => console.log("baad catch" + " " + error.status));
+    // axios
+    //   .post("http://localhost:8000/login/", {
+    //     userName: this.currentUser.userName,
+    //     password: this.currentUser.password,
+    //   })
+    //   .then((response) => {
+    //     console.log(response.data.token);
+    //   })
+    //   .catch((error) => console.log(error.response.request._response));
 
-      // console.log(this.currentUser.userName);
-      // console.log(this.currentUser.password);
-      // this.$router.push("/");
-    },
+    // console.log(this.currentUser.userName);
+    // console.log(this.currentUser.password);
+    // this.$router.push("/");
   },
+  }
 };
 </script>
 
