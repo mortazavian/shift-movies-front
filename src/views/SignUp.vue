@@ -19,8 +19,7 @@
 
     <button @click="signUp">signUp</button>
     <!-- </form> -->
-    <button @click="kiri"></button>
-  </div>
+</div>
 </template>
 
 <script>

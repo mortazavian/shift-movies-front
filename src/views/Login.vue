@@ -26,10 +26,13 @@
       <button class="btn" @click="logIn">Log-In</button>
     </div>
   </div>
+  <hr />
+  <Button>bus</Button>
 </template>
 
 <script>
 import axios from 'axios';
+import Button from 'primevue/button';
 export default {
   // name: "LogIn",
   data() {
