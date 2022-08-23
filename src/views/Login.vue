@@ -23,7 +23,7 @@
     </div>
 
     <div>
-      <button class="btn" @click="logIn">Log-In</button>
+      <Button @click="logIn" label="Log-In" class="p-button" />
     </div>
   </div>
 </template>
@@ -94,6 +94,20 @@ export default {
 </script>
 
 <style scoped>
+.p-button-help {
+  background-color: rgb(1, 127, 12);
+  border-radius: 18px;
+  border-color: rgb(0, 150, 255);
+  font-style: italic;
+  color: black;
+}
+.p-button {
+  background-color: rgb(1, 127, 12);
+  border-radius: 18px;
+  border-color: rgb(1, 120, 12);
+  font-style: italic;
+  color: black;
+}
 .test {
   font-size: 50px;
 }
