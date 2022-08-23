@@ -8,6 +8,9 @@ const store = createStore({
   state() {
     return {
       counter: 0,
+      username: "",
+      password: "",
+      token: "",
     }
   },
   getters: rootGetters,
