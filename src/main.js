@@ -4,7 +4,7 @@ import PrimeVue from 'primevue/config';
 import Dialog from 'primevue/dialog';
 import Button from "primevue/button";
 import router from './router'
-import store from './store'
+import store from './store/index';
 
 import "../node_modules/primeflex/primeflex.css"             //flex
 import "primevue/resources/themes/saga-blue/theme.css"       //theme
@@ -17,4 +17,6 @@ app.component('Dialog', Dialog);
 app.component('Button', Button);
 
 app.use(PrimeVue);
-app.use(store).use(router).mount('#app')
+app.use(store).use(router)
+
+app.mount('#app')
