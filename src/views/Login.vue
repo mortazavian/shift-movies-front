@@ -26,15 +26,10 @@
       <button class="btn" @click="logIn">Log-In</button>
     </div>
   </div>
-  <hr />
-  <Button>bus</Button>
-  <br />
-  {{ cat }}
 </template>
 
 <script>
 import axios from "axios";
-import Button from "primevue/button";
 export default {
   // name: "LogIn",
   data() {
@@ -60,64 +55,40 @@ export default {
         // },
       })
         .then((response) => {
-          // if (response.status == 200) {
-          //   console.log("KIR");
-          // } else {
-          //   console.log("SAlam");
-          // }
-          // console.log("kir");
-          // console.log(response);
-
-          // if (response.ok) {
-          console.log("we wanna get token");
-          console.log("response: " + response);
-          console.log("response.data: " + response.data);
-          console.log("response.data.token: " + response.data.token);
-          console.log("committing to store...");
-          // this.$store.commit("saveToken", { value: this.token });
-
+          // Fucking hard process to get the user's token commented as below:
+          // ===>
+          // console.log("we wanna get token");
+          // console.log("response: " + response);
+          // console.log("response.data: " + response.data);
+          // console.log("response.data.token: " + response.data.token);
+          // console.log("committing to store...");
+          // ...
           // localStorage.setItem("myCat", "Tom");
           // cat = localStorage.getItem("myCat");
           // this.cat = localStorage.getItem("myCat");
           // console.log(this.cat);
-          localStorage.setItem("token", response.data.token);
-          this.token = localStorage.getItem("token");
-          console.log(this.token);
-          this.$store.commit("saveToken", { value: this.token });
-
-          console.log("Commit to store");
-
+          // ...
           // console.log(response.data.token);
           // this.tooken = localStorage.getItem("token");
           // const TOKEN = response.data.auth_token;
           // this.$store.commit("saveToken", TOKEN);
           // localStorage.setItem("token", TOKEN);
-
-          // }
+          // ...
+          // Finally we use the localStorage
+          // and also note that you should remove it when the user logged out.
+          // ===>
+          localStorage.setItem("token", response.data.token);
+          this.token = localStorage.getItem("token");
+          console.log(this.token);
+          this.$store.commit("saveToken", { value: this.token });
+          console.log("Committed to store");
         })
         .catch((error) => console.log(error.status));
-      // axios
-      //   .post("http://localhost:8000/login/", {
-      //     userName: this.currentUser.userName,
-      //     password: this.currentUser.password,
-      //   })
-      //   .then((response) => {
-      //     console.log(response.data.token);
-      //   })
-      //   .catch((error) => console.log(error.response.request._response));
 
       this.$store.commit("saveUsername", { value: this.currentUser.username });
       this.$store.commit("savePassword", { value: this.currentUser.password });
-      // this.$store.commit("saveToken", { value: this.tooken });
-      console.log("store ham shod");
+      console.log("User stored");
     },
-    // saveUser() {
-    //   this.$store.commit("saveUsername", { value: this.username });
-    //   this.$store.commit("savePassword", { value: this.password });
-    // },
-    // savePass() {
-    //   this.$store.commit("savePassword", { value: this.password });
-    // },
   },
 };
 </script>
