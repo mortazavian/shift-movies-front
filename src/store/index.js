@@ -1,16 +1,16 @@
 import { createStore } from 'vuex'
 
-import rootGetter from './getters';
+import rootGetters from './getters.js';
 import rootMutations from './mutations';
 import rootActions from './actions';
 
 const store = createStore({
   state() {
     return {
-
+      counter: 0,
     }
   },
-  getters: rootGetter,
+  getters: rootGetters,
   mutations: rootMutations,
   actions: rootActions,
   modules: {
