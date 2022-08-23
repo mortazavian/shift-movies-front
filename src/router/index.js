@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import Login from "../views/Login.vue";
 import SignUp from "../views/SignUp.vue";
 import Temp from "../views/Temp.vue";
+import NotFound from "../views/NotFound.vue";
 
 const routes = [
   {
@@ -33,7 +34,12 @@ const routes = [
     path: "/see-res",
     name: "temp",
     component: Temp,
-  }
+  },
+  { 
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: NotFound,
+  },
 ];
 
 const router = createRouter({
