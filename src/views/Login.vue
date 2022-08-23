@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import axios from 'axios';
-import Button from 'primevue/button';
+import axios from "axios";
+import Button from "primevue/button";
 export default {
   // name: "LogIn",
   data() {
@@ -51,49 +51,67 @@ export default {
         data: {
           username: this.currentUser.username,
           password: this.currentUser.password,
+          tooken: "",
         },
         // headers: {
         //   "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
         // },
-      }).then((response) => {
-        // if (response.status == 200) {
-        //   console.log("KIR");
-        // } else {
-        //   console.log("SAlam");
-        // }
-        console.log('kir');
-        console.log(response);
-
-        // if (response.ok) {
-        //   console.log(response.data.token);
-        // }
-
-        // if (
-        //   response ===
-        //   { non_field_errors: ["Unable to log in with provided credentials."] }
-        // ) {
-        //   console.log("KIR");
-        // } else {
-        //   console.log(response.data.token);
-        // }
-        console.log("kirr");
       })
-    .catch((error) => console.log("baad catch" + " " + error.status));
-    // axios
-    //   .post("http://localhost:8000/login/", {
-    //     userName: this.currentUser.userName,
-    //     password: this.currentUser.password,
-    //   })
-    //   .then((response) => {
-    //     console.log(response.data.token);
-    //   })
-    //   .catch((error) => console.log(error.response.request._response));
+        .then((response) => {
+          // if (response.status == 200) {
+          //   console.log("KIR");
+          // } else {
+          //   console.log("SAlam");
+          // }
+          console.log("kir");
+          // console.log(response);
 
-    // console.log(this.currentUser.userName);
-    // console.log(this.currentUser.password);
-    // this.$router.push("/");
+          // if (response.ok) {
+          console.log(response.data.token);
+          // this.tooken = localStorage.getItem("token");
+          const TOKEN = response.data.auth_token;
+          this.$store.commit("saveToken", TOKEN);
+          localStorage.setItem("token", TOKEN);
+
+          // }
+
+          // if (
+          //   response ===
+          //   { non_field_errors: ["Unable to log in with provided credentials."] }
+          // ) {
+          //   console.log("KIR");
+          // } else {
+          //   console.log(response.data.token);
+          // }
+          console.log("kirr");
+        })
+        .catch((error) => console.log("baad catch" + " " + error.status));
+      // axios
+      //   .post("http://localhost:8000/login/", {
+      //     userName: this.currentUser.userName,
+      //     password: this.currentUser.password,
+      //   })
+      //   .then((response) => {
+      //     console.log(response.data.token);
+      //   })
+      //   .catch((error) => console.log(error.response.request._response));
+
+      // console.log(this.currentUser.userName);
+      // console.log(this.currentUser.password);
+      // this.$router.push("/");
+      this.$store.commit("saveUsername", { value: this.currentUser.username });
+      this.$store.commit("savePassword", { value: this.currentUser.password });
+      // this.$store.commit("saveToken", { value: this.tooken });
+      console.log("store ham shod");
+    },
+    // saveUser() {
+    //   this.$store.commit("saveUsername", { value: this.username });
+    //   this.$store.commit("savePassword", { value: this.password });
+    // },
+    // savePass() {
+    //   this.$store.commit("savePassword", { value: this.password });
+    // },
   },
-  }
 };
 </script>
 
