@@ -28,6 +28,8 @@
   </div>
   <hr />
   <Button>bus</Button>
+  <br />
+  {{ cat }}
 </template>
 
 <script>
@@ -40,6 +42,7 @@ export default {
       currentUser: {
         username: "",
         password: "",
+        token: "",
       },
     };
   },
@@ -51,7 +54,6 @@ export default {
         data: {
           username: this.currentUser.username,
           password: this.currentUser.password,
-          tooken: "",
         },
         // headers: {
         //   "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
@@ -63,29 +65,37 @@ export default {
           // } else {
           //   console.log("SAlam");
           // }
-          console.log("kir");
+          // console.log("kir");
           // console.log(response);
 
           // if (response.ok) {
-          console.log(response.data.token);
+          console.log("we wanna get token");
+          console.log("response: " + response);
+          console.log("response.data: " + response.data);
+          console.log("response.data.token: " + response.data.token);
+          console.log("committing to store...");
+          // this.$store.commit("saveToken", { value: this.token });
+
+          // localStorage.setItem("myCat", "Tom");
+          // cat = localStorage.getItem("myCat");
+          // this.cat = localStorage.getItem("myCat");
+          // console.log(this.cat);
+          localStorage.setItem("token", response.data.token);
+          this.token = localStorage.getItem("token");
+          console.log(this.token);
+          this.$store.commit("saveToken", { value: this.token });
+
+          console.log("Commit to store");
+
+          // console.log(response.data.token);
           // this.tooken = localStorage.getItem("token");
-          const TOKEN = response.data.auth_token;
-          this.$store.commit("saveToken", TOKEN);
-          localStorage.setItem("token", TOKEN);
+          // const TOKEN = response.data.auth_token;
+          // this.$store.commit("saveToken", TOKEN);
+          // localStorage.setItem("token", TOKEN);
 
           // }
-
-          // if (
-          //   response ===
-          //   { non_field_errors: ["Unable to log in with provided credentials."] }
-          // ) {
-          //   console.log("KIR");
-          // } else {
-          //   console.log(response.data.token);
-          // }
-          console.log("kirr");
         })
-        .catch((error) => console.log("baad catch" + " " + error.status));
+        .catch((error) => console.log(error.status));
       // axios
       //   .post("http://localhost:8000/login/", {
       //     userName: this.currentUser.userName,
@@ -96,9 +106,6 @@ export default {
       //   })
       //   .catch((error) => console.log(error.response.request._response));
 
-      // console.log(this.currentUser.userName);
-      // console.log(this.currentUser.password);
-      // this.$router.push("/");
       this.$store.commit("saveUsername", { value: this.currentUser.username });
       this.$store.commit("savePassword", { value: this.currentUser.password });
       // this.$store.commit("saveToken", { value: this.tooken });
