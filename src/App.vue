@@ -4,6 +4,7 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/login">Log-In</router-link> |
     <router-link to="/see-res">temp</router-link>
+    <hr />
   </nav>
   <router-view/>
 </template>
@@ -15,6 +16,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: rgb(232, 232, 232);
 }
 
 nav {
