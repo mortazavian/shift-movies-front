@@ -22,7 +22,8 @@
       v-model="currentUser.password"
     />
     <br />
-    <button @click="signUp" class="btn">Sign-Up</button>
+    <!-- <button @click="signUp" class="btn">Sign-Up</button> -->
+    <Button @click="signUp" label="Sign-Up" class="p-button" />
   </div>
   <hr />
 </template>
@@ -81,6 +82,13 @@ export default {
 </script>
 
 <style scoped>
+.p-button {
+  background-color: rgb(106, 0, 255);
+  border-radius: 18px;
+  border-color: rgb(110, 0, 255);
+  font-style: italic;
+  color: black;
+}
 .title {
   font-size: 50px;
 }
