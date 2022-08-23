@@ -9,23 +9,27 @@
     country
     year of publication
     -->
-    <h2 class="name">{{}}</h2>
+    <h2 class="name">{{ information.name }}</h2>
+
+    <!-- <h1>haromzade</h1> -->
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    information: {},
+  },
   data() {
     return {
-      information: {},
       name: "",
-      summery: "",
-      genre: "",
-      director: "",
-      actors: [],
-      score: 0,
-      country: "",
-      yearOfPublication: "",
+      //   summery: "",
+      //   genre: "",
+      //   director: "",
+      //   actors: [],
+      //   score: 0,
+      //   country: "",
+      //   yearOfPublication: "",
     };
   },
   methods: {
@@ -35,16 +39,18 @@ export default {
       }
     },
   },
-  created() {
-    this.name = this.information.name;
-    this.summery = this.information.summery;
-    this.genre = this.information.genre;
-    this.director = this.information.director;
-    this.assignActors();
-    this.score = this.information.score;
-    this.country = this.information.country;
-    this.yearOfPublication = this.information.yearOfPublication;
-  },
+  //   created() {
+  //     console.log(this.information);
+  //     this.name = this.information.name;
+  //     console.log(this.name);
+  //     // this.summery = this.information.summery;
+  //     // this.genre = this.information.genre;
+  //     // this.director = this.information.director;
+  //     // this.assignActors();
+  //     // this.score = this.information.score;
+  //     // this.country = this.information.country;
+  //     // this.yearOfPublication = this.information.yearOfPublication;
+  //   },
 };
 </script>
 <style scoped></style>
