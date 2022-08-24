@@ -9,7 +9,7 @@
 
 <style scoped>
 .container {
-    text-align: center;
-    font-size: 30px;
+  text-align: center;
+  font-size: 30px;
 }
 </style>
