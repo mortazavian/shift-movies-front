@@ -3,8 +3,9 @@
     <Menubar :model="items">
       <template #start>
         <img
-          alt="logo"
-          src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png"
+          alt="SMlogo"
+
+          src="./assets/SmLogo.png"
           height="40"
           class="mr-2"
         />
