@@ -65,10 +65,12 @@ export default {
             {
               label: "Sign-Up",
               icon: "pi pi-fw pi-user-plus",
+              url: "http://localhost:8080/signup",
             },
             {
               label: "Log-In",
               icon: "pi pi-fw pi-sign-in",
+              url: "http://localhost:8080/login",
             },
             {
               label: "Log-Out",
@@ -99,8 +101,13 @@ export default {
           ],
         },
         {
+          label: "temp",
+          url: "http://localhost:8080/see-res",
+        },
+        {
           label: "Quit",
           icon: "pi pi-fw pi-power-off",
+          url: "http://www.googel.com"
         },
       ],
     };
