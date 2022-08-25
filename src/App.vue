@@ -31,28 +31,30 @@ export default {
       items: [
         {
           label: "Home",
-          icon: "pi pi-fw pi-file",
-          url: ""
+          icon: "pi pi-fw pi-home",
+          url: "http://localhost:8080/",
         },
         {
-          label: "Edit",
-          icon: "pi pi-fw pi-pencil",
+          label: "Genre",
           items: [
             {
-              label: "Left",
-              icon: "pi pi-fw pi-align-left",
+              label: "Action",
+              // icon: "pi pi-fw pi-align-left",
             },
             {
-              label: "Right",
-              icon: "pi pi-fw pi-align-right",
+              label: "Comedy",
+              // icon: "pi pi-fw pi-align-right",
             },
             {
-              label: "Center",
-              icon: "pi pi-fw pi-align-center",
+              label: "Drum",
+              // icon: "pi pi-fw pi-align-center",
             },
             {
-              label: "Justify",
-              icon: "pi pi-fw pi-align-justify",
+              label: "Horror",
+              // icon: "pi pi-fw pi-align-justify",
+            },
+            {
+              label: "Fantasy",
             },
           ],
         },
@@ -61,62 +63,38 @@ export default {
           icon: "pi pi-fw pi-user",
           items: [
             {
-              label: "New",
+              label: "Sign-Up",
               icon: "pi pi-fw pi-user-plus",
+            },
+            {
+              label: "Log-In",
+              icon: "pi pi-fw pi-sign-in",
+            },
+            {
+              label: "Log-Out",
+              icon: "pi pi-fw pi-sign-out",
             },
             {
               label: "Delete",
               icon: "pi pi-fw pi-user-minus",
             },
-            {
-              label: "Search",
-              icon: "pi pi-fw pi-users",
-              items: [
-                {
-                  label: "Filter",
-                  icon: "pi pi-fw pi-filter",
-                  items: [
-                    {
-                      label: "Print",
-                      icon: "pi pi-fw pi-print",
-                    },
-                  ],
-                },
-                {
-                  icon: "pi pi-fw pi-bars",
-                  label: "List",
-                },
-              ],
-            },
           ],
         },
         {
-          label: "Events",
-          icon: "pi pi-fw pi-calendar",
+          label: "Comment",
+          icon: "pi pi-fw pi-comment",
           items: [
+            {
+              label: "New",
+              icon: "pi pi-fw pi-plus",
+            },
             {
               label: "Edit",
               icon: "pi pi-fw pi-pencil",
-              items: [
-                {
-                  label: "Save",
-                  icon: "pi pi-fw pi-calendar-plus",
-                },
-                {
-                  label: "Delete",
-                  icon: "pi pi-fw pi-calendar-minus",
-                },
-              ],
             },
             {
-              label: "Archieve",
-              icon: "pi pi-fw pi-calendar-times",
-              items: [
-                {
-                  label: "Remove",
-                  icon: "pi pi-fw pi-calendar-minus",
-                },
-              ],
+              label: "Delete",
+              icon: "pi pi-fw pi-minus",
             },
           ],
         },
