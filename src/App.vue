@@ -33,7 +33,8 @@ export default {
         {
           label: "Home",
           icon: "pi pi-fw pi-home",
-          url: "http://localhost:8080/",
+          // url: "http://localhost:8080/",
+          to: "/",
         },
         {
           label: "Genre",
@@ -66,12 +67,14 @@ export default {
             {
               label: "Sign-Up",
               icon: "pi pi-fw pi-user-plus",
-              url: "http://localhost:8080/signup",
+              // url: "http://localhost:8080/signup",
+              to: "/signup",
             },
             {
               label: "Log-In",
               icon: "pi pi-fw pi-sign-in",
-              url: "http://localhost:8080/login",
+              // url: "http://localhost:8080/login",
+              to: "/login",
             },
             {
               label: "Log-Out",
@@ -103,7 +106,8 @@ export default {
         },
         {
           label: "temp",
-          url: "http://localhost:8080/see-res",
+          // url: "http://localhost:8080/see-res",
+          to: "/see-res",
         },
         {
           label: "Quit",
