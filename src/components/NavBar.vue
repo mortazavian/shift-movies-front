@@ -114,5 +114,16 @@ export default {
       ],
     };
   },
+  mounted() {
+    if (localStorage.getItem("token")) {
+      console.log(localStorage.getItem("token"));
+      this.items.push({
+        label: "Upload-Film",
+        to: "/upload-movie",
+      });
+    } else {
+      console.log("hi");
+    }
+  },
 };
 </script>
