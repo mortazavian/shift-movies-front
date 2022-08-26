@@ -11,7 +11,7 @@
 import Movie from "../../components/Movie.vue";
 import axios from "axios";
 export default {
-  name: "Horro",
+  name: "Horror",
   data() {
     return {
       movies: [],
