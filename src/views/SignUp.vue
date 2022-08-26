@@ -1,31 +1,28 @@
 <template>
-  <div class="title">This is Sign-Up page</div>
-  <hr />
   <div class="container">
-    <label class="label">Name</label>
-    <input class="name form-control" type="text" v-model="currentUser.name" />
-    <br />
-    <label class="label">Username</label>
-    <input
-      class="user-name form-control"
-      type="text"
-      v-model="currentUser.username"
-    />  
-    <br />
-    <label class="label">Email</label>
-    <input class="email form-control" type="text" v-model="currentUser.email" />
-    <br />
-    <label class="label">Password</label>
-    <input
-      class="password form-control"
-      type="text"
-      v-model="currentUser.password"
-    />
-    <br />
-    <!-- <button @click="signUp" class="btn">Sign-Up</button> -->
-    <Button @click="signUp" label="Sign-Up" class="p-button" />
+    <!-- Name -->
+    <span class="p-float-label">
+      <InputText id="name" type="text" v-model="currentUser.name" />
+      <label for="name">Name</label>
+    </span>
+    <!-- User Name -->
+    <span class="p-float-label">
+      <InputText id="username" type="text" v-model="currentUser.userName" />
+      <label for="username">User Name</label>
+    </span>
+    <!-- Email -->
+    <span class="p-float-label">
+      <InputText id="email" type="email" v-model="currentUser.email" />
+      <label for="email">Email</label>
+    </span>
+    <!-- Password -->
+    <span class="p-float-label">
+      <InputText id="password" type="email" v-model="currentUser.password" />
+      <label for="password">Password</label>
+    </span>
+    <!-- Button -->
+    <Button @click="signUp" label="Sign-Up" class="p-button-secondary" />
   </div>
-  <hr />
 </template>
 
 <script>
@@ -60,15 +57,12 @@ export default {
       //     }
       //   );
 
-      axios.post(
-        "https://vue-http-demo-a3c0d-default-rtdb.firebaseio.com/signup.json",
-        {
-          name: this.currentUser.name,
-          userName: this.currentUser.userName,
-          email: this.currentUser.email,
-          password: this.currentUser.password,
-        }
-      );
+      axios.post("https://localhost:8000/signup/", {
+        name: this.currentUser.name,
+        userName: this.currentUser.username,
+        email: this.currentUser.email,
+        password: this.currentUser.password,
+      });
 
       // console.log(this.currentUser.userName);
       // console.log(this.currentUser.password);
@@ -82,7 +76,20 @@ export default {
 </script>
 
 <style scoped>
-.p-button {
+/* .container {
+  background-color: #caf0f8;
+} */
+.p-float-label {
+  margin-top: 1.5rem;
+}
+Button {
+  margin-top: 2rem;
+}
+
+/* span {
+  padding-top: 1.5rem;
+} */
+/* .p-button {
   background-color: rgb(106, 0, 255);
   border-radius: 18px;
   border-color: rgb(110, 0, 255);
@@ -117,5 +124,5 @@ export default {
 }
 .label {
   margin-left: 50px;
-}
+} */
 </style>
