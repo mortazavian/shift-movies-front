@@ -1,29 +1,26 @@
 <template>
-  <div class="test">THis is login page</div>
-  <hr />
   <div class="container">
-    <div class="username-form">
-      <label>Username</label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Enter Your Username"
-        v-model="currentUser.username"
-      />
+    <div>
+      <span class="p-float-label">
+        <InputText id="username" type="text" v-model="currentUser.username" />
+        <label for="username">Username</label>
+      </span>
     </div>
-
-    <div class="password-form">
-      <label>Password</label>
-      <input
-        type="password"
-        class="form-control"
-        placeholder="Enter Your Password"
-        v-model="currentUser.password"
-      />
+    <div>
+      <span class="p-float-label">
+        <InputText
+          id="username"
+          type="password"
+          v-model="currentUser.password"
+        />
+        <label for="username">Username</label>
+      </span>
     </div>
 
     <div>
-      <Button @click="logIn" label="Log-In" class="p-button" />
+      <Button @click="logIn" label="Log-In" class="p-button-secondary" />
+
+      <!-- <Button label="Log-In" class="p-button" /> -->
     </div>
   </div>
 </template>
@@ -94,7 +91,14 @@ export default {
 </script>
 
 <style scoped>
-.p-button-help {
+div {
+  padding-top: 1.5rem;
+}
+
+.container:nth-child(1) {
+  margin-top: 4rem;
+}
+/* .p-button-help {
   background-color: rgb(1, 127, 12);
   border-radius: 18px;
   border-color: rgb(0, 150, 255);
@@ -120,13 +124,13 @@ export default {
 }
 .btn {
   background-color: #4c9daf; /* Green */
-  border-radius: 20px;
-  border: none;
-  color: white;
+/* border-radius: 20px; */
+/* border: none; */
+/* color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-}
+  font-size: 16px; */
+/* } */
 </style>
