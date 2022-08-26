@@ -42,21 +42,26 @@ export default {
             {
               label: "Action",
               // icon: "pi pi-fw pi-align-left",
+              to: "/category/action/",
             },
             {
               label: "Comedy",
               // icon: "pi pi-fw pi-align-right",
+              to: "category/comedy/",
             },
             {
               label: "Drum",
               // icon: "pi pi-fw pi-align-center",
+              to: "category/drum/",
             },
             {
               label: "Horror",
               // icon: "pi pi-fw pi-align-justify",
+              to: "category/horror/",
             },
             {
               label: "Fantasy",
+              to: "category/fantasy/",
             },
           ],
         },
