@@ -76,6 +76,9 @@ export default {
 </script>
 
 <style scoped>
+/* .container {
+  background-color: #caf0f8;
+} */
 .p-float-label {
   margin-top: 1.5rem;
 }
