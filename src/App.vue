@@ -2,13 +2,7 @@
   <div>
     <Menubar :model="items">
       <template #start>
-        <img
-          alt="SMlogo"
-
-          src="./assets/SmLogo.png"
-          height="40"
-          class="mr-2"
-        />
+        <img alt="SMlogo" src="./assets/SmLogo.png" height="40" class="mr-2" />
       </template>
       <template #end>
         <InputText placeholder="Search" type="text" />
@@ -122,7 +116,7 @@ export default {
         {
           label: "Quit",
           icon: "pi pi-fw pi-power-off",
-          url: "http://www.googel.com"
+          url: "http://www.googel.com",
         },
       ],
     };
@@ -131,6 +125,9 @@ export default {
 </script>
 
 <style>
+* {
+  font-family: sans-serif;
+}
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
