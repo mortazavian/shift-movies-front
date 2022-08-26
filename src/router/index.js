@@ -4,6 +4,11 @@ import Login from "../views/Login.vue";
 import SignUp from "../views/SignUp.vue";
 import Temp from "../views/Temp.vue";
 import NotFound from "../views/NotFound.vue";
+import FantasyPage from "../views/genre/Fantasy.vue";
+import HorrorPage from "../views/genre/Horror.vue";
+import DrumPage from "../views/genre/Drum.vue";
+import ActionPage from "../views/genre/Action.vue";
+import ComedyPage from "../views/genre/Comedy.vue";
 
 const routes = [
   {
@@ -39,6 +44,31 @@ const routes = [
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     component: NotFound,
+  },
+  {
+    path: "/category/fantasy",
+    name: "fantasy",
+    component: FantasyPage,
+  },
+  {
+    path: "/category/horror",
+    name: "horror",
+    component: HorrorPage,
+  },
+  {
+    path: "/category/drum",
+    name: "drum",
+    component: DrumPage,
+  },
+  {
+    path: "/category/action",
+    name: "action",
+    component: ActionPage,
+  },
+  {
+    path: "/category/comedy",
+    name: "comedy",
+    component: ComedyPage,
   },
 ];
 
