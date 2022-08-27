@@ -70,6 +70,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -92,7 +93,22 @@ export default {
     };
   },
   methods: {
-    uploadMovie() {},
+    uploadMovie() {
+      axios({
+        method: "post",
+        url: "http://127.0.0.1:8000/http://localhost:8000/upload-film/",
+        data: {
+          name: this.name,
+          summary: this.summary,
+          genre: this.selectedGenre,
+          director: this.director,
+          actors: this.actors,
+          score: this.selectedScore,
+          country: this.country,
+          yearOfPublication: this.yearOfPublication,
+        },
+      });
+    },
   },
 };
 </script>
