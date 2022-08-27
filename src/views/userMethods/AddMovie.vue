@@ -87,6 +87,9 @@ export default {
       ],
     };
   },
+  methods: {
+    uploadMovie() {},
+  },
 };
 </script>
 
