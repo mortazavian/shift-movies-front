@@ -1,8 +1,10 @@
 <template>
   <div>
     <!-- Testing the results -->
-    <h2>{{ selectedGenre }}</h2>
-    <h2>{{ summary }}</h2>
+    <!-- <h2>{{ selectedGenre }}</h2> -->
+    <!-- <h2>{{ summary }}</h2> -->
+    <!-- <h2>{{ dateValidator(dateOfPublication) }}</h2> -->
+    <!-- <h1>{{ dateOfPublication }}</h1> -->
     <div>
       <span class="p-float-label">
         <InputText id="username" type="text" v-model="name" />
@@ -57,10 +59,16 @@
     </div>
     <div>
       <span class="p-float-label">
+        <InputText id="date" type="text" v-model="dateOfPublication" />
+        <label for="date">Date of Publication</label>
+      </span>
+    </div>
+    <!-- <div>
+      <span class="p-float-label">
         <Calendar id="calendar" v-model="dateOfPublication" />
         <label for="calendar">Date of Publication</label>
       </span>
-    </div>
+    </div> -->
     <!-- Button -->
     <Button
       @click="uploadMovie"
@@ -96,6 +104,10 @@ export default {
     };
   },
   methods: {
+    // dateValidator(date) {
+    //   // const validDate = date.split("-");
+    //   return date;
+    // },
     uploadMovie() {
       axios({
         method: "post",
@@ -111,7 +123,7 @@ export default {
           actors: this.actors,
           score: this.selectedScore,
           country: this.country,
-          yearOfPublication: this.yearOfPublication,
+          yearOfPublication: this.dateOfPublication,
         },
       })
         .then((response) => {
