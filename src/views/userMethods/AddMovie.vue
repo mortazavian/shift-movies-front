@@ -1,5 +1,8 @@
 <template>
   <div>
+    <!-- Testing the results -->
+    <h2>{{ selectedGenre }}</h2>
+    <h2>{{ summary }}</h2>
     <div>
       <span class="p-float-label">
         <InputText id="username" type="text" v-model="name" />
@@ -7,10 +10,8 @@
       </span>
     </div>
     <div>
-      <span class="p-float-label">
-        <Textarea id="textarea" v-model="summary" rows="3" cols="40" />
-        <label for="textarea">Summary</label>
-      </span>
+      <textarea v-model="summary"></textarea>
+      <!-- <Textarea v-model="ss" :autoResize="true" rows="5" cols="30" /> -->
     </div>
     <div>
       <span>
@@ -74,6 +75,8 @@ import axios from "axios";
 export default {
   data() {
     return {
+      ss: "",
+      token: null,
       name: null,
       summary: null,
       dateOfPublication: null,
@@ -96,18 +99,32 @@ export default {
     uploadMovie() {
       axios({
         method: "post",
-        url: "http://127.0.0.1:8000/http://localhost:8000/upload-film/",
+        url: "http://localhost:8000/upload-film/",
+        // headers: {
+        //   token: this.token,
+        // },
         data: {
           name: this.name,
           summary: this.summary,
-          genre: this.selectedGenre,
+          genre: this.selectedGenre.name,
           director: this.director,
           actors: this.actors,
           score: this.selectedScore,
           country: this.country,
           yearOfPublication: this.yearOfPublication,
         },
-      });
+      })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => console.log(error));
+      console.log(token);
+    },
+  },
+  computed: {
+    seeToken() {
+      this.token = this.$store.getters.showToken;
+      // return this.$store.getters.showToken;
     },
   },
 };
