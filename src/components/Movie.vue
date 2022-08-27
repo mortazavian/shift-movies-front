@@ -140,7 +140,7 @@ export default {
   background-color: #7e7e7e;
   border-radius: 20px;
   margin-bottom: 1.5rem;
-  margin-left: 25rem;
+  margin-left: 12rem;
 }
 .info {
   display: flex;
