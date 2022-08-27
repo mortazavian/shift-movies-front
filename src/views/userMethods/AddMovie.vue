@@ -60,10 +60,8 @@
         <label for="calendar">Date of Publication</label>
       </span>
     </div>
-    <!-- <span class="p-float-label">
-      <InputText id="username" type="text" v-model="value2" />
-      <label for="username">Username</label>
-    </span> -->
+    <!-- Button -->
+    <Button label="Secondary" class="p-button-secondary" />
   </div>
 </template>
 
@@ -98,5 +96,8 @@ div {
 }
 #listbox {
   padding-top: 0;
+}
+Button {
+  margin-top: 2rem;
 }
 </style>
