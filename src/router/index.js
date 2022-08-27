@@ -10,6 +10,7 @@ import DrumPage from "../views/genre/Drum.vue";
 import ActionPage from "../views/genre/Action.vue";
 import ComedyPage from "../views/genre/Comedy.vue";
 import AddMovie from "../views/userMethods/AddMovie.vue";
+import LogOut from "../views/LogOutView.vue";
 
 const routes = [
   {
@@ -75,6 +76,11 @@ const routes = [
     path: "/upload-movie",
     name: "UploadMovie",
     component: AddMovie,
+  },
+  {
+    path: "/logout",
+    name: "logout",
+    component: LogOut,
   },
 ];
 

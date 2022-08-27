@@ -73,10 +73,10 @@ export default {
               // url: "http://localhost:8080/login",
               to: "/login",
             },
-            {
-              label: "Log-Out",
-              icon: "pi pi-fw pi-sign-out",
-            },
+            // {
+            //   label: "Log-Out",
+            //   icon: "pi pi-fw pi-sign-out",
+            // },
             {
               label: "Delete",
               icon: "pi pi-fw pi-user-minus",
@@ -107,9 +107,10 @@ export default {
           to: "/see-res",
         },
         {
-          label: "Quit",
-          icon: "pi pi-fw pi-power-off",
-          url: "http://www.googel.com",
+          label: "Log-Out",
+          icon: "pi pi-fw pi-sign-out",
+          to: "/logout",
+          // method: this.logOut(),
         },
       ],
     };
@@ -125,5 +126,11 @@ export default {
       console.log("hi");
     }
   },
+  // methods: {
+  //   logOut() {
+  //     localStorage.removeItem("token");
+  //     this.$router.push("/");
+  //   },
+  // },
 };
 </script>
