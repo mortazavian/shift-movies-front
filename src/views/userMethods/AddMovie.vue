@@ -61,7 +61,11 @@
       </span>
     </div>
     <!-- Button -->
-    <Button label="Secondary" class="p-button-secondary" />
+    <Button
+      @click="uploadMovie"
+      label="Upload Movie"
+      class="p-button-secondary"
+    />
   </div>
 </template>
 
