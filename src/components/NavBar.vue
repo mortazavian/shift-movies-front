@@ -83,24 +83,24 @@ export default {
             },
           ],
         },
-        {
-          label: "Comment",
-          icon: "pi pi-fw pi-comment",
-          items: [
-            {
-              label: "New",
-              icon: "pi pi-fw pi-plus",
-            },
-            {
-              label: "Edit",
-              icon: "pi pi-fw pi-pencil",
-            },
-            {
-              label: "Delete",
-              icon: "pi pi-fw pi-minus",
-            },
-          ],
-        },
+        // {
+        //   label: "Comment",
+        //   icon: "pi pi-fw pi-comment",
+        //   items: [
+        //     {
+        //       label: "New",
+        //       icon: "pi pi-fw pi-plus",
+        //     },
+        //     {
+        //       label: "Edit",
+        //       icon: "pi pi-fw pi-pencil",
+        //     },
+        //     {
+        //       label: "Delete",
+        //       icon: "pi pi-fw pi-minus",
+        //     },
+        //   ],
+        // },
         {
           label: "temp",
           // url: "http://localhost:8080/see-res",
@@ -122,6 +122,9 @@ export default {
         label: "Upload-Film",
         to: "/upload-movie",
       });
+      // this.items.({
+      //   label: "test",
+      // });
     } else {
       console.log("hi");
     }
