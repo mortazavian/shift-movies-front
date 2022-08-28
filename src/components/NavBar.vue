@@ -122,9 +122,9 @@ export default {
         label: "Upload-Film",
         to: "/upload-movie",
       });
-      this.items.({
-        label: "test",
-      });
+      // this.items.({
+      //   label: "test",
+      // });
     } else {
       console.log("hi");
     }
