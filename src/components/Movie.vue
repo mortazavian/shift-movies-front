@@ -80,6 +80,7 @@
         <!-- <img alt="download" src="../assets/icons/Vector.svg" /> -->
         <!-- </div> -->
         <Button
+          @click="pushSingleMovie"
           label="Download"
           class="p-button-raised p-button-secondary download"
         />
@@ -112,6 +113,12 @@ export default {
       for (actor in this.information.actors) {
         this.actors.push(actor);
       }
+    },
+    pushSingleMovie() {
+      this.$router.push({
+        path: "/single-movie",
+        query: { id: this.information.id },
+      });
     },
   },
   //   created() {
