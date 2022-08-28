@@ -7,8 +7,10 @@
 
 <script>
 export default {
-  props: {
-    id: null,
+  data() {
+    return {
+      id: this.$route.query,
+    };
   },
 };
 </script>
