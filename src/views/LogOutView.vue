@@ -20,7 +20,7 @@ export default {
         },
       }).then((response) => {
         localStorage.removeItem("token");
-        this.$router.push("/");
+        window.location.href = "http://localhost:8080/";
       });
     },
   },
@@ -30,7 +30,7 @@ export default {
     console.log(this.token);
     setTimeout(() => {
       this.logOut();
-    }, 3000);
+    }, 2000);
   },
 };
 </script>
