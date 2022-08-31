@@ -106,30 +106,43 @@ export default {
           // url: "http://localhost:8080/see-res",
           to: "/see-res",
         },
-        {
-          label: "Log-In",
-          icon: "pi pi-fw pi-sign-in",
-          // url: "http://localhost:8080/login",
-          to: "/login",
-        },
-        {
-          label: "Log-Out",
-          icon: "pi pi-fw pi-sign-out",
-          to: "/logout",
-          // method: this.logOut(),
-        },
+        // {
+        //   label: "Log-In",
+        //   icon: "pi pi-fw pi-sign-in",
+        //   // url: "http://localhost:8080/login",
+        //   to: "/login",
+        // },
+        // {
+        //   label: "Log-Out",
+        //   icon: "pi pi-fw pi-sign-out",
+        //   to: "/logout",
+        //   // method: this.logOut(),
+        // },
       ],
     };
   },
   mounted() {
     if (localStorage.getItem("token")) {
       console.log(localStorage.getItem("token"));
-      this.items.push({
-        label: "Upload-Film",
-        to: "/upload-movie",
-      });
+      this.items.push(
+        {
+          label: "Log-Out",
+          icon: "pi pi-fw pi-sign-out",
+          to: "/logout",
+          // method: this.logOut(),
+        },
+        {
+          label: "Upload-Film",
+          to: "/upload-movie",
+        }
+      );
     } else {
-      console.log("hi");
+      this.items.push({
+        label: "Log-In",
+        icon: "pi pi-fw pi-sign-in",
+        // url: "http://localhost:8080/login",
+        to: "/login",
+      });
     }
   },
   // methods: {
