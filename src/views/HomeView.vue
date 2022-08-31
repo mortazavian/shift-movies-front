@@ -17,6 +17,8 @@
 import Movie from "@/components/Movie.vue";
 import axios from "axios";
 
+// location.reload(true);
+
 export default {
   name: "HomeView",
   data() {

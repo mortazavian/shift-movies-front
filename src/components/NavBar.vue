@@ -20,8 +20,8 @@ export default {
         {
           label: "Home",
           icon: "pi pi-fw pi-home",
-          // url: "http://localhost:8080/",
-          to: "/",
+          url: "http://localhost:8080/",
+          // to: "/",
         },
         {
           label: "Genre",
@@ -57,32 +57,32 @@ export default {
             },
           ],
         },
-        {
-          label: "Users",
-          icon: "pi pi-fw pi-user",
-          items: [
-            {
-              label: "Sign-Up",
-              icon: "pi pi-fw pi-user-plus",
-              // url: "http://localhost:8080/signup",
-              to: "/signup",
-            },
-            {
-              label: "Log-In",
-              icon: "pi pi-fw pi-sign-in",
-              // url: "http://localhost:8080/login",
-              to: "/login",
-            },
-            // {
-            //   label: "Log-Out",
-            //   icon: "pi pi-fw pi-sign-out",
-            // },
-            {
-              label: "Delete",
-              icon: "pi pi-fw pi-user-minus",
-            },
-          ],
-        },
+        // {
+        //   label: "Users",
+        //   icon: "pi pi-fw pi-user",
+        //   items: [
+        //     {
+        //       label: "Sign-Up",
+        //       icon: "pi pi-fw pi-user-plus",
+        //       // url: "http://localhost:8080/signup",
+        //       to: "/signup",
+        //     },
+        //     {
+        //       label: "Log-In",
+        //       icon: "pi pi-fw pi-sign-in",
+        //       // url: "http://localhost:8080/login",
+        //       to: "/login",
+        //     },
+        //     // {
+        //     //   label: "Log-Out",
+        //     //   icon: "pi pi-fw pi-sign-out",
+        //     // },
+        //     {
+        //       label: "Delete",
+        //       icon: "pi pi-fw pi-user-minus",
+        //     },
+        //   ],
+        // },
         // {
         //   label: "Comment",
         //   icon: "pi pi-fw pi-comment",
@@ -106,27 +106,43 @@ export default {
           // url: "http://localhost:8080/see-res",
           to: "/see-res",
         },
-        {
-          label: "Log-Out",
-          icon: "pi pi-fw pi-sign-out",
-          to: "/logout",
-          // method: this.logOut(),
-        },
+        // {
+        //   label: "Log-In",
+        //   icon: "pi pi-fw pi-sign-in",
+        //   // url: "http://localhost:8080/login",
+        //   to: "/login",
+        // },
+        // {
+        //   label: "Log-Out",
+        //   icon: "pi pi-fw pi-sign-out",
+        //   to: "/logout",
+        //   // method: this.logOut(),
+        // },
       ],
     };
   },
   mounted() {
     if (localStorage.getItem("token")) {
       console.log(localStorage.getItem("token"));
-      this.items.push({
-        label: "Upload-Film",
-        to: "/upload-movie",
-      });
-      // this.items.({
-      //   label: "test",
-      // });
+      this.items.push(
+        {
+          label: "Log-Out",
+          icon: "pi pi-fw pi-sign-out",
+          to: "/logout",
+          // method: this.logOut(),
+        },
+        {
+          label: "Upload-Film",
+          to: "/upload-movie",
+        }
+      );
     } else {
-      console.log("hi");
+      this.items.push({
+        label: "Log-In",
+        icon: "pi pi-fw pi-sign-in",
+        // url: "http://localhost:8080/login",
+        to: "/login",
+      });
     }
   },
   // methods: {
