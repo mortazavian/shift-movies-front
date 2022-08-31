@@ -26,7 +26,7 @@ export default {
   },
   mounted() {
     // this.token = localStorage.getItem("token");
-    this.token = this.$store.getters.showToken;
+    this.token = localStorage.getItem("token");
     console.log(this.token);
     setTimeout(() => {
       this.logOut();
