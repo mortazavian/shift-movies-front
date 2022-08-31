@@ -104,17 +104,13 @@ export default {
     };
   },
   methods: {
-    // dateValidator(date) {
-    //   // const validDate = date.split("-");
-    //   return date;
-    // },
     uploadMovie() {
       axios({
         method: "post",
         url: "http://localhost:8000/upload-film/",
-        // headers: {
-        //   token: this.token,
-        // },
+        headers: {
+          Authorization: "Token " + this.token,
+        },
         data: {
           name: this.name,
           summary: this.summary,
@@ -127,18 +123,15 @@ export default {
         },
       })
         .then((response) => {
-          console.log(response);
+          this.$router.push("category/" + this.selectedGenre.name + "/")
         })
         .catch((error) => console.log(error));
-      console.log(token);
     },
   },
-  computed: {
-    seeToken() {
-      this.token = this.$store.getters.showToken;
-      // return this.$store.getters.showToken;
-    },
-  },
+  mounted() {
+    this.token = localStorage.getItem("token");
+    console.log(this.token);
+  }
 };
 </script>
 
