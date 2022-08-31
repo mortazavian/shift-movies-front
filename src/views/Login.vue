@@ -79,14 +79,14 @@ export default {
           console.log(this.token);
           this.$store.commit("saveToken", { value: this.token });
           console.log("Committed to store");
-          this.$router.push("/");
+          // this.$router.push("/");  
+          window.location.href = "http://localhost:8080/"
         })
         .catch((error) => console.log(error.status));
 
       this.$store.commit("saveUsername", { value: this.currentUser.username });
       this.$store.commit("savePassword", { value: this.currentUser.password });
       console.log("User stored");
-      window.location.href = "http://localhost:8080/"
     },
   },
 };
