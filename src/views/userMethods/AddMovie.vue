@@ -70,6 +70,12 @@
       </span>
     </div> -->
     <!-- Button -->
+    <div>
+      <span class="p-float-label">
+        <InputText id="username" type="text" v-model="name" />
+        <label for="username">Image Url</label>
+      </span>
+    </div>
     <Button
       @click="uploadMovie"
       label="Upload Movie"
@@ -123,7 +129,7 @@ export default {
         },
       })
         .then((response) => {
-          this.$router.push("category/" + this.selectedGenre.name + "/")
+          this.$router.push("category/" + this.selectedGenre.name + "/");
         })
         .catch((error) => console.log(error));
     },
@@ -131,7 +137,7 @@ export default {
   mounted() {
     this.token = localStorage.getItem("token");
     console.log(this.token);
-  }
+  },
 };
 </script>
 
