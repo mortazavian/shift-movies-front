@@ -24,7 +24,14 @@
   <!-- new model for movie component -->
   <div class="container">
     <div class="photo">
-      <img alt="movie-name" src={{ this.photoSrc }} />
+      <img alt="movie-pic" src="https://cdn.mos.cms.futurecdn.net/oWGBU4DpsUb9tfr9xm2reT-970-80.jpg.webp" />
+      <!-- <img
+        alt="movie-pic"
+        src="../../../../DownloadMovie-BackEnd/DownloadMovie_BackEnd/"
+        height="380"
+        width="200"
+      /> -->
+      <!-- '/MoviesPictures/20220606_192401.jpg' -->
     </div>
     <div class="content">
       <div class="title">{{ information.name }}</div>
@@ -100,7 +107,9 @@ export default {
   data() {
     return {
       name: "",
-      photoSrc: "../../../../DownloadMovie-BackEnd/DownloadMovie_BackEnd" + this.information.photo,
+      photoSrc:
+        "../../../../DownloadMovie-BackEnd/DownloadMovie_BackEnd" +
+        this.information.photo,
 
       //   summery: "",
       //   genre: "",
@@ -127,7 +136,13 @@ export default {
   mounted() {
     console.log(this.information.photo);
     console.log(this.photoSrc);
-  }
+  },
+  computed: {
+    getImgUrl() {
+      // return require(`../../../../DownloadMovie-BackEnd/DownloadMovie_BackEnd/${this.information.photo}`);
+      return null;
+    },
+  },
   //   created() {
   //     console.log(this.information);
   //     this.name = this.information.name;
