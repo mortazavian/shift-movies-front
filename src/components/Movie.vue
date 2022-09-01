@@ -23,7 +23,16 @@
 
   <!-- new model for movie component -->
   <div class="container">
-    <div class="photo">photo</div>
+    <div class="photo">
+      <img alt="movie-pic" :src="getImgUrl" height="290" width="200" />
+      <!-- <img
+        alt="movie-pic"
+        src="../../../../DownloadMovie-BackEnd/DownloadMovie_BackEnd/"
+        height="380"
+        width="200"
+      /> -->
+      <!-- '/MoviesPictures/20220606_192401.jpg' -->
+    </div>
     <div class="content">
       <div class="title">{{ information.name }}</div>
       <div class="category">
@@ -84,7 +93,6 @@
           label="Download"
           class="p-button-raised p-button-secondary download"
         />
-
         <!-- <div class="download-text">Download</div> -->
       </div>
     </div>
@@ -99,13 +107,7 @@ export default {
   data() {
     return {
       name: "",
-      //   summery: "",
-      //   genre: "",
-      //   director: "",
-      //   actors: [],
-      //   score: 0,
-      //   country: "",
-      //   yearOfPublication: "",
+      photoSrc: this.information.photo,
     };
   },
   methods: {
@@ -121,18 +123,17 @@ export default {
       });
     },
   },
-  //   created() {
-  //     console.log(this.information);
-  //     this.name = this.information.name;
-  //     console.log(this.name);
-  //     // this.summery = this.information.summery;
-  //     // this.genre = this.information.genre;
-  //     // this.director = this.information.director;
-  //     // this.assignActors();
-  //     // this.score = this.information.score;
-  //     // this.country = this.information.country;
-  //     // this.yearOfPublication = this.information.yearOfPublication;
-  //   },
+  mounted() {
+    // console.log(this.information.photo);
+    // console.log(this.photoSrc);
+  },
+  computed: {
+    getImgUrl() {
+      return this.photoSrc;
+      // return require(`../../../../DownloadMovie-BackEnd/DownloadMovie_BackEnd/${this.information.photo}`);
+      // return null;
+    },
+  },
 };
 </script>
 
