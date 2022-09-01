@@ -108,17 +108,6 @@ export default {
     return {
       name: "",
       photoSrc: this.information.photo,
-      // photoSrc:
-      //   "../../../../DownloadMovie-BackEnd/DownloadMovie_BackEnd" +
-      //   this.information.photo,
-
-      //   summery: "",
-      //   genre: "",
-      //   director: "",
-      //   actors: [],
-      //   score: 0,
-      //   country: "",
-      //   yearOfPublication: "",
     };
   },
   methods: {
@@ -136,28 +125,15 @@ export default {
   },
   mounted() {
     // console.log(this.information.photo);
-    console.log(this.photoSrc);
+    // console.log(this.photoSrc);
   },
   computed: {
     getImgUrl() {
       return this.photoSrc;
-      // return this.photoSrc;
       // return require(`../../../../DownloadMovie-BackEnd/DownloadMovie_BackEnd/${this.information.photo}`);
       // return null;
     },
   },
-  //   created() {
-  //     console.log(this.information);
-  //     this.name = this.information.name;
-  //     console.log(this.name);
-  //     // this.summery = this.information.summery;
-  //     // this.genre = this.information.genre;
-  //     // this.director = this.information.director;
-  //     // this.assignActors();
-  //     // this.score = this.information.score;
-  //     // this.country = this.information.country;
-  //     // this.yearOfPublication = this.information.yearOfPublication;
-  //   },
 };
 </script>
 
