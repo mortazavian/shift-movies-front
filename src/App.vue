@@ -16,6 +16,8 @@ export default {
 </script>
 
 <style>
+/* comment */
+
 * {
   font-family: sans-serif;
 }
