@@ -65,6 +65,10 @@ export default {
             },
           ],
         },
+        {
+          label: "About Us",
+          to: "/about",
+        },
         // {
         //   label: "Users",
         //   icon: "pi pi-fw pi-user",
