@@ -13,7 +13,7 @@
           type="password"
           v-model="currentUser.password"
         />
-        <label for="username">Username</label>
+        <label for="username">Password</label>
       </span>
     </div>
 
