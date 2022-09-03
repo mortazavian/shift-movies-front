@@ -1,14 +1,5 @@
 <template>
   <!-- <div class="container"> -->
-  <!-- name
-    summary 
-    genre
-    director
-    actors
-    score
-    country
-    year of publication
-    -->
   <!-- <h1 class="name">"{{ information.name }}"</h1>
     <h2 class="summary">Summary: {{ information.summary }}</h2>
     <h3 class="genre">Genre: {{ information.genre }}</h3>
@@ -25,13 +16,6 @@
   <div class="container">
     <div class="photo">
       <img alt="movie-pic" :src="getImgUrl" height="290" width="200" />
-      <!-- <img
-        alt="movie-pic"
-        src="../../../../DownloadMovie-BackEnd/DownloadMovie_BackEnd/"
-        height="380"
-        width="200"
-      /> -->
-      <!-- '/MoviesPictures/20220606_192401.jpg' -->
     </div>
     <div class="content">
       <div class="title">{{ information.name }}</div>
@@ -46,7 +30,6 @@
 
       <!-- line -->
 
-      <!-- <div class="separator-line"></div> -->
       <div class="director">
         <img
           class="icon"
@@ -85,9 +68,6 @@
         </div>
         <div class="score">Score: {{ information.score }}/10</div>
         <div class="download-btn"></div>
-        <!-- <div class="download-icon icon"> -->
-        <!-- <img alt="download" src="../assets/icons/Vector.svg" /> -->
-        <!-- </div> -->
         <Button
           @click="pushSingleMovie"
           label="Download"
