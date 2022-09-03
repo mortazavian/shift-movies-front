@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <SlideShow class="slideShow" />
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <!-- <p>{{ movies }}</p> -->
@@ -14,6 +15,7 @@
 <script>
 // @ is an alias to /src
 // import HelloWorld from "@/components/HelloWorld.vue";
+import SlideShow from "../components/SlideShow.vue";
 import Movie from "@/components/Movie.vue";
 import axios from "axios";
 
@@ -29,6 +31,7 @@ export default {
   components: {
     // HelloWorld,
     Movie,
+    SlideShow,
   },
   created() {
     axios({
@@ -42,3 +45,18 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.slideShow {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1440px;
+  height: 480px;
+  /* border: 8px ridge blue; */
+  padding-left: 450px;
+  padding-right: 0px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+</style>
