@@ -109,11 +109,11 @@ export default {
         //     },
         //   ],
         // },
-        {
-          label: "temp",
-          // url: "http://localhost:8080/see-res",
-          to: "/see-res",
-        },
+        // {
+        //   label: "temp",
+        //   // url: "http://localhost:8080/see-res",
+        //   to: "/see-res",
+        // },
         // {
         //   label: "Log-In",
         //   icon: "pi pi-fw pi-sign-in",
