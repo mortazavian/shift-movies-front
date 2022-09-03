@@ -13,7 +13,7 @@
           type="password"
           v-model="currentUser.password"
         />
-        <label for="username">Username</label>
+        <label for="username">Password</label>
       </span>
     </div>
 
@@ -79,8 +79,8 @@ export default {
           console.log(this.token);
           this.$store.commit("saveToken", { value: this.token });
           console.log("Committed to store");
-          // this.$router.push("/");  
-          window.location.href = "http://localhost:8080/"
+          // this.$router.push("/");
+          window.location.href = "http://localhost:8080/";
         })
         .catch((error) => console.log(error.status));
 
@@ -93,12 +93,26 @@ export default {
 </script>
 
 <style scoped>
+/* * {
+  background-color: rgb(100, 4, 4);
+} */
+
 div {
   padding-top: 1.5rem;
+  margin: 1rem;
 }
 
-.container:nth-child(1) {
+.container {
   margin-top: 4rem;
+  /* justify-content: center; */
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 233px; */
+  /* height: 74px; */
+  vertical-align: middle;
+  padding: 10px;
 }
 /* .p-button-help {
   background-color: rgb(1, 127, 12);

@@ -51,7 +51,7 @@
       </div>
       <!-- <div class="actors-text-answer">{{ information.actors }}</div> -->
       <div class="summary">
-        <!-- <div class="summary-text">Summary: {{ information.summary }}</div> -->
+        <div class="summary-text">Summary: {{ information.summary }}</div>
       </div>
 
       <div class="info">
