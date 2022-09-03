@@ -148,7 +148,7 @@ export default {
       let index = this.movies.length;
       console.log(index);
       for (let i = 0; i < index; i++) {
-        if (this.movies[i].name === this.search) {
+        if (this.movies[i].name.toLowerCase() === this.search.toLowerCase()) {
           this.movie = this.movies[i];
           this.$router.push({
             path: "/single-movie",
