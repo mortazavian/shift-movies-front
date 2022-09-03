@@ -35,13 +35,10 @@ export default {
       method: "get",
       url: "http://127.0.0.1:8000/home/",
     }).then((response) => {
-      console.log("KIR1");
       console.log(response.data);
-      console.log("KIR2");
-      console.log(response.status);
+      // console.log(response.status);
       this.movies = response.data;
     });
-    // .catch((error) => console.log("KIRI"));
   },
 };
 </script>

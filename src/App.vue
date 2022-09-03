@@ -1,8 +1,5 @@
 <template>
   <NavBar />
-  <!-- <div>
-    <img src="../../../DownloadMovie-BackEnd/DownloadMovie_BackEnd/MoviesPictures/20220606_192401.jpg" />
-  </div> -->
 </template>
 
 <script>
