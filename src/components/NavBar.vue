@@ -5,7 +5,13 @@
         <img alt="SMlogo" src="../assets/SmLogo.png" height="40" class="mr-2" />
       </template>
       <template #end>
-        <InputText placeholder="Search" type="text" />
+        <InputText
+          placeholder="Search"
+          type="text"
+          v-model="search"
+          v-on:keyup.enter="searchMovie()"
+        />
+        <!-- <Button label="GO!" @click="searchMovie" /> -->
       </template>
     </Menubar>
   </div>
@@ -13,6 +19,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -119,7 +127,44 @@ export default {
         //   // method: this.logOut(),
         // },
       ],
+      movies: [],
+      movie: null,
+      search: "",
     };
+  },
+  created() {
+    axios({
+      method: "get",
+      url: "http://127.0.0.1:8000/home/",
+    })
+      .then((response) => {
+        this.movies = response.data;
+      })
+      .catch((error) => console.log("No results found!"));
+  },
+  methods: {
+    searchMovie() {
+      // console.log("in searchMovie method");
+      let index = this.movies.length;
+      console.log(index);
+      for (let i = 0; i < index; i++) {
+        if (this.movies[i].name === this.search) {
+          this.movie = this.movies[i];
+          this.$router.push({
+            path: "/single-movie",
+            query: { id: this.movie.id },
+          });
+          break;
+        }
+      }
+      // Refresh the page for continuous searches
+      window.location.href =
+        "http://localhost:8080/single-movie?id=" + this.movie.id;
+
+      if (this.movie === null) {
+        window.alert("Movie Not Found :(");
+      }
+    },
   },
   mounted() {
     if (localStorage.getItem("token")) {
